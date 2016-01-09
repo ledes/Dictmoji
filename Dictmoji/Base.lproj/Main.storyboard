@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fa2-ZT-bKW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dGm-fa-MZE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Emoji List View Controller-->
@@ -27,13 +28,133 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1fr-6k-NKJ"/>
                     <connections>
                         <outlet property="tableView" destination="UCO-Bs-iap" id="Woy-9f-ukt"/>
+                        <segue destination="DPp-aG-0to" kind="show" identifier="tableViewToEmojiSegue" id="OHe-NR-dCc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfb-Qn-o4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178.5" y="429"/>
+            <point key="canvasLocation" x="214.5" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iKe-9G-D3M">
+            <objects>
+                <navigationController id="dGm-fa-MZE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dPg-IB-A0J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fa2-ZT-bKW" kind="relationship" relationship="rootViewController" id="88a-Lm-74h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkr-wT-Oz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594" y="429"/>
+        </scene>
+        <!--Emoji Detail View Controller-->
+        <scene sceneID="yzp-on-qpg">
+            <objects>
+                <viewController id="DPp-aG-0to" customClass="EmojiDetailViewController" customModule="Dictmoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HXE-4X-CVs"/>
+                        <viewControllerLayoutGuide type="bottom" id="FDO-X0-8lg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dfr-uq-cFC">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the emoji definition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXN-Es-aMD">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KYE-35-qOl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KYE-35-qOl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="30" y="345" width="340" height="205"/>
+                                    <mask key="constraints">
+                                        <include reference="KYE-35-qOl"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjt-kh-uKn">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="Xd2-FQ-QUA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="190"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xd2-FQ-QUA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="30" y="78" width="340" height="212"/>
+                                    <mask key="constraints">
+                                        <include reference="Xd2-FQ-QUA"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fXN-Es-aMD" firstAttribute="top" secondItem="HXE-4X-CVs" secondAttribute="bottom" constant="325" id="19a-bk-VT9"/>
+                            <constraint firstItem="FDO-X0-8lg" firstAttribute="top" secondItem="fXN-Es-aMD" secondAttribute="bottom" constant="50" id="SUe-m4-5dm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fXN-Es-aMD" secondAttribute="trailing" constant="10" id="UWX-aq-bkT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kjt-kh-uKn" secondAttribute="trailing" constant="10" id="b9l-3h-P9K"/>
+                            <constraint firstItem="Kjt-kh-uKn" firstAttribute="leading" secondItem="Dfr-uq-cFC" secondAttribute="leadingMargin" constant="10" id="gfa-NF-WJz"/>
+                            <constraint firstItem="fXN-Es-aMD" firstAttribute="leading" secondItem="Dfr-uq-cFC" secondAttribute="leadingMargin" constant="10" id="ouM-CJ-Xro"/>
+                            <constraint firstItem="Kjt-kh-uKn" firstAttribute="top" secondItem="HXE-4X-CVs" secondAttribute="bottom" constant="58" id="wZZ-DR-niu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fXN-Es-aMD"/>
+                                <exclude reference="Kjt-kh-uKn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="b9l-3h-P9K"/>
+                                <exclude reference="gfa-NF-WJz"/>
+                                <exclude reference="wZZ-DR-niu"/>
+                                <exclude reference="19a-bk-VT9"/>
+                                <exclude reference="UWX-aq-bkT"/>
+                                <exclude reference="ouM-CJ-Xro"/>
+                                <exclude reference="SUe-m4-5dm"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fXN-Es-aMD"/>
+                                <include reference="Kjt-kh-uKn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="b9l-3h-P9K"/>
+                                <include reference="gfa-NF-WJz"/>
+                                <include reference="wZZ-DR-niu"/>
+                                <include reference="19a-bk-VT9"/>
+                                <include reference="UWX-aq-bkT"/>
+                                <include reference="ouM-CJ-Xro"/>
+                                <include reference="SUe-m4-5dm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="nzv-nx-Nqr"/>
+                    <connections>
+                        <outlet property="EmojiLabel" destination="Kjt-kh-uKn" id="oP7-S2-qid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cF-kI-DMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045.5" y="429"/>
         </scene>
     </scenes>
 </document>
