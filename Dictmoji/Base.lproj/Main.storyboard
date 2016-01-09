@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Emoji List View Controller-->
+        <!--Emoji Dictionary-->
         <scene sceneID="MS9-OU-OHg">
             <objects>
                 <viewController id="fa2-ZT-bKW" customClass="EmojiListViewController" customModule="Dictmoji" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,9 +27,9 @@
                                 </variation>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1fr-6k-NKJ"/>
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" id="1fr-6k-NKJ"/>
                     <connections>
                         <outlet property="tableView" destination="UCO-Bs-iap" id="Woy-9f-ukt"/>
                         <segue destination="DPp-aG-0to" kind="show" identifier="tableViewToEmojiSegue" id="OHe-NR-dCc"/>

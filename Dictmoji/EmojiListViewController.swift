@@ -16,7 +16,7 @@ class EmojiListViewController : UIViewController, UITableViewDataSource, UITable
     var emojis = ["🐼", "🙊", "🐊", "🐋", "🐟", "🐌", "🐞", "🐀", "🐂", "🐅", "🐰", "🐴", "🐓", "🐥", "🐪", "🐷", "🐶"]
     var emoji = "👻"
     
-    var descriptions = ["A panda", "A monkey", "An alligator", "A whale", "A fish", "A snail", "A ladybug", "A rat", " a cow", "A tigger",
+    var descriptions = ["A panda", "A monkey", "An alligator", "A whale", "A fish", "A snail", "A ladybug", "A rat", " A cow", "A tigger",
     "A rabbit", "A horse", "A chicken", "A chick", "A camel", "A pig", "A dog" ]
     
     var description1 = "Emoji description"
